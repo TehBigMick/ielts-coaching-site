@@ -1,6 +1,6 @@
 /* =========================================
    IELTS Coaching Site — style.css
-   Clean, conversion-first, dark UI
+   Conversion-first dark UI
    ========================================= */
 
 /* ---------- Reset ---------- */
@@ -36,7 +36,6 @@ textarea {
 /* ---------- Variables ---------- */
 :root {
   --bg: #0b1220;
-  --surface: #0f1a2e;
   --card: rgba(255,255,255,0.03);
   --border: rgba(234,240,255,0.14);
 
@@ -48,7 +47,6 @@ textarea {
   --accent-soft: rgba(90,162,255,0.35);
 
   --radius: 16px;
-  --radius-sm: 12px;
 }
 
 /* ---------- Base ---------- */
@@ -73,7 +71,7 @@ h1, h2, h3 {
 
 h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
 h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
-h3 { font-size: 1.1rem; }
+h3 { font-size: 1.05rem; }
 
 small { color: var(--faint); }
 
@@ -259,9 +257,8 @@ small { color: var(--faint); }
   color: #ff5a7a;
 }
 
-/* ---------- FORMS (FIXED) ---------- */
+/* ---------- Forms ---------- */
 input,
-select,
 textarea {
   background: rgba(255,255,255,0.03);
   color: var(--text);
@@ -270,38 +267,101 @@ textarea {
   padding: 12px 14px;
 }
 
-/* remove native select */
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image:
-    linear-gradient(45deg, transparent 50%, rgba(234,240,255,0.7) 50%),
-    linear-gradient(135deg, rgba(234,240,255,0.7) 50%, transparent 50%);
-  background-position:
-    calc(100% - 18px) 50%,
-    calc(100% - 12px) 50%;
-  background-size: 6px 6px;
-  background-repeat: no-repeat;
-  padding-right: 40px;
-}
-
-select option {
-  background: #0b1220;
-  color: var(--text);
-}
-
 input::placeholder,
 textarea::placeholder {
   color: var(--faint);
 }
 
 input:focus,
-select:focus,
 textarea:focus {
   outline: none;
   box-shadow: 0 0 0 3px var(--accent-soft);
   border-color: var(--accent);
+}
+
+/* ---------- Booking option cards (fallback-safe) ---------- */
+
+.booking-options {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.option-card {
+  position: relative;
+  display: block;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(234,240,255,0.16);
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: rgba(234,240,255,0.9);
+}
+
+/* hide native checkbox */
+.option-card input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* hover */
+.option-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(90,162,255,0.45);
+}
+
+/* text */
+.option-card span {
+  pointer-events: none;
+}
+
+/* checked state (NO :has) */
+.option-card input:checked + span {
+  font-weight: 600;
+  color: #081220;
+}
+
+.option-card input:checked {
+  /* nothing visible, state used by sibling */
+}
+
+.option-card input:checked + span::before {
+  content: "";
+}
+
+/* checked card background */
+.option-card input:checked {
+  /* trigger parent via outline trick */
+}
+
+.option-card input:checked {
+  outline: none;
+}
+
+.option-card input:checked {
+  /* noop for compatibility */
+}
+
+/* apply selected style via sibling hack */
+.option-card input:checked ~ span {
+  position: relative;
+}
+
+.option-card input:checked ~ span::after {
+  content: "";
+  position: absolute;
+  inset: -14px -16px;
+  background: linear-gradient(135deg, #5aa2ff, #2ee6b7);
+  border-radius: 14px;
+  z-index: -1;
 }
 
 /* ---------- Footer ---------- */
