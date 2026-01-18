@@ -1,40 +1,18 @@
 /* =========================================
    IELTS Coaching Site — style.css
-   Conversion-first dark UI
+   Conversion-first dark UI (full)
    ========================================= */
 
 /* ---------- Reset ---------- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
 
 /* ---------- Variables ---------- */
-:root {
+:root{
   --bg: #0b1220;
   --card: rgba(255,255,255,0.03);
   --border: rgba(234,240,255,0.14);
@@ -47,10 +25,11 @@ textarea {
   --accent-soft: rgba(90,162,255,0.35);
 
   --radius: 16px;
+  --radius-sm: 12px;
 }
 
 /* ---------- Base ---------- */
-body {
+body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background:
     radial-gradient(1200px 800px at 10% -10%, rgba(90,162,255,0.18), transparent 60%),
@@ -59,59 +38,54 @@ body {
   line-height: 1.55;
 }
 
-p {
-  color: var(--muted);
-  margin: 0 0 1em;
-}
+p{ color: var(--muted); margin: 0 0 1em; }
 
-h1, h2, h3 {
+h1,h2,h3{
   margin: 0 0 0.6em;
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
-h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
-h3 { font-size: 1.05rem; }
+h1{ font-size: clamp(2.2rem, 4vw, 3.2rem); }
+h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3{ font-size: 1.1rem; }
 
-small { color: var(--faint); }
+small{ color: var(--faint); }
+
+.text-link{
+  color: rgba(90,162,255,0.95);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.muted{ color: var(--muted); }
+.faint{ color: var(--faint); }
 
 /* ---------- Layout ---------- */
-.container {
+.container{
   max-width: 1120px;
   padding: 0 20px;
   margin: 0 auto;
 }
 
-.section {
-  padding: 72px 0;
+.section{ padding: 72px 0; }
+.section--tight{ padding: 48px 0; }
+
+.grid{ display: grid; gap: 24px; }
+.grid-2{ grid-template-columns: repeat(2, 1fr); }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 900px){
+  .grid-2, .grid-3{ grid-template-columns: 1fr; }
 }
 
-.section--tight {
-  padding: 48px 0;
-}
-
-.grid {
-  display: grid;
-  gap: 24px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 900px) {
-  .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
+/* ---------- Section headers ---------- */
+.section__head{
+  max-width: 780px;
+  margin-bottom: 22px;
 }
 
 /* ---------- Navigation ---------- */
-.nav {
+.nav{
   position: sticky;
   top: 0;
   z-index: 100;
@@ -120,53 +94,51 @@ small { color: var(--faint); }
   border-bottom: 1px solid rgba(234,240,255,0.08);
 }
 
-.nav__bar {
+.nav__bar{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 0;
 }
 
-.brand {
+.brand{
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 800;
 }
 
-.brand__mark {
+.brand__mark{
   width: 34px;
   height: 34px;
   border-radius: 10px;
   background: linear-gradient(135deg, #5aa2ff, #2ee6b7);
 }
 
-.nav__links {
+.nav__links{
   display: flex;
   gap: 14px;
   align-items: center;
 }
 
-.nav__links a {
+.nav__links a{
   padding: 8px 10px;
   border-radius: 10px;
   color: var(--muted);
 }
 
-.nav__links a:hover {
+.nav__links a:hover{
   background: rgba(255,255,255,0.05);
   color: var(--text);
 }
 
-@media (max-width: 900px) {
-  .nav__links {
-    display: none;
-  }
+@media (max-width: 900px){
+  .nav__links{ display: none; }
 }
 
-/* ---------- Badges ---------- */
+/* ---------- Badges / Kicker ---------- */
 .badge,
-.kicker {
+.kicker{
   display: inline-flex;
   gap: 8px;
   align-items: center;
@@ -179,7 +151,7 @@ small { color: var(--faint); }
 }
 
 /* ---------- Buttons ---------- */
-.btn {
+.btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -192,53 +164,210 @@ small { color: var(--faint); }
   transition: all 0.15s ease;
 }
 
-.btn--primary {
+.btn--primary{
   background: linear-gradient(135deg, #5aa2ff, #2ee6b7);
   color: #081220;
 }
 
-.btn--primary:hover {
-  transform: translateY(-1px);
-}
+.btn--primary:hover{ transform: translateY(-1px); }
 
-.btn--ghost {
+.btn--ghost{
   background: rgba(255,255,255,0.03);
   border-color: var(--border);
   color: var(--text);
 }
 
 /* ---------- Cards ---------- */
-.card {
+.card{
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
-.card__inner {
-  padding: 28px;
-}
+.card__inner{ padding: 28px; }
 
-.card--flat {
+.card--flat{
   background: rgba(255,255,255,0.02);
   border-style: dashed;
 }
 
+.card--hover{ transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease; }
+.card--hover:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(90,162,255,0.35);
+}
+
+/* used on index */
+.pillar{ padding: 28px; }
+.pillar p{ margin-bottom: 0; }
+
 /* ---------- CTA ---------- */
-.cta {
+.cta{
   background: linear-gradient(135deg, rgba(90,162,255,0.16), rgba(46,230,183,0.12));
   border: 1px solid rgba(234,240,255,0.18);
   border-radius: 22px;
   padding: 48px;
 }
 
+@media (max-width: 900px){
+  .cta{ padding: 28px; }
+}
+
+/* ---------- HERO (index) ---------- */
+#hero{ padding: 48px 0 18px; }
+
+.hero{
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.hero__copy{
+  padding: 22px 0;
+}
+
+.hero__actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 14px 0 6px;
+}
+
+.hero__meta{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.hero__panel{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(234,240,255,0.14);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.hero__panel-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 18px 0;
+  color: rgba(234,240,255,0.85);
+}
+
+.hero__panel-header span{
+  color: var(--faint);
+  font-size: 0.95rem;
+}
+
+.hero__panel-body{
+  padding: 16px 18px 18px;
+}
+
+.stat{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(234,240,255,0.08);
+}
+
+.stat:last-child{ border-bottom: none; }
+
+.stat__label{ color: var(--muted); }
+.stat__value{ color: rgba(234,240,255,0.95); font-weight: 700; }
+
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Index “Who it’s for” boxes ---------- */
+.list-box{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(234,240,255,0.14);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+/* ---------- Problem grid ---------- */
+.problem-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.problem-item{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(234,240,255,0.14);
+  border-radius: 16px;
+  padding: 16px 16px;
+  color: rgba(234,240,255,0.8);
+}
+
+@media (max-width: 900px){
+  .problem-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Results row (index + results page cards) ---------- */
+.results-row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 900px){
+  .results-row{ grid-template-columns: 1fr; }
+}
+
+.result-card{ padding: 22px; }
+.tag{
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(234,240,255,0.14);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.score{
+  margin-top: 12px;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.score small{
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-left: 8px;
+  color: var(--faint);
+}
+
+/* ---------- Services cards ---------- */
+.service-card p{ margin-bottom: 0; }
+
+/* ---------- Split layout (index bottom) ---------- */
+.split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 900px){
+  .split{ grid-template-columns: 1fr; }
+}
+
 /* ---------- Lists ---------- */
-.checklist {
+.checklist{
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.checklist li {
+.checklist li{
   display: flex;
   gap: 10px;
   align-items: flex-start;
@@ -246,20 +375,20 @@ small { color: var(--faint); }
   color: var(--muted);
 }
 
-.checklist li::before {
+.checklist li::before{
   content: "✓";
   color: #2ee6b7;
   font-weight: 800;
 }
 
-.crosslist li::before {
+.crosslist li::before{
   content: "×";
   color: #ff5a7a;
 }
 
-/* ---------- Forms ---------- */
+/* ---------- Forms (global, safe) ---------- */
 input,
-textarea {
+textarea{
   background: rgba(255,255,255,0.03);
   color: var(--text);
   border: 1px solid var(--border);
@@ -268,33 +397,41 @@ textarea {
 }
 
 input::placeholder,
-textarea::placeholder {
-  color: var(--faint);
-}
+textarea::placeholder{ color: var(--faint); }
 
 input:focus,
-textarea:focus {
+textarea:focus{
   outline: none;
   box-shadow: 0 0 0 3px var(--accent-soft);
   border-color: var(--accent);
 }
 
-/* ---------- Booking option cards (fallback-safe) ---------- */
+/* optional error class used by main.js guard */
+.field-error{
+  border-color: rgba(255,90,122,0.65) !important;
+  box-shadow: 0 0 0 3px rgba(255,90,122,0.20) !important;
+}
 
-.booking-options {
+/* ---------- Booking option cards (multi-select) — fallback-safe ---------- */
+
+.booking-options{
   border: none;
   padding: 0;
   margin: 0;
 }
 
-.options-grid {
+.booking-options legend{
+  margin-bottom: 8px;
+}
+
+.options-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
   margin-top: 10px;
 }
 
-.option-card {
+.option-card{
   position: relative;
   display: block;
   padding: 14px 16px;
@@ -304,58 +441,36 @@ textarea:focus {
   cursor: pointer;
   transition: all 0.15s ease;
   color: rgba(234,240,255,0.9);
+  overflow: hidden;
 }
 
 /* hide native checkbox */
-.option-card input {
+.option-card input{
   position: absolute;
   opacity: 0;
 }
 
 /* hover */
-.option-card:hover {
+.option-card:hover{
   background: rgba(255,255,255,0.06);
   border-color: rgba(90,162,255,0.45);
 }
 
-/* text */
-.option-card span {
+/* ensure text sits above background */
+.option-card span{
+  position: relative;
+  z-index: 2;
   pointer-events: none;
 }
 
-/* checked state (NO :has) */
-.option-card input:checked + span {
-  font-weight: 600;
+/* checked text style */
+.option-card input:checked + span{
+  font-weight: 700;
   color: #081220;
 }
 
-.option-card input:checked {
-  /* nothing visible, state used by sibling */
-}
-
-.option-card input:checked + span::before {
-  content: "";
-}
-
-/* checked card background */
-.option-card input:checked {
-  /* trigger parent via outline trick */
-}
-
-.option-card input:checked {
-  outline: none;
-}
-
-.option-card input:checked {
-  /* noop for compatibility */
-}
-
-/* apply selected style via sibling hack */
-.option-card input:checked ~ span {
-  position: relative;
-}
-
-.option-card input:checked ~ span::after {
+/* checked background (NO :has needed) */
+.option-card input:checked + span::after{
   content: "";
   position: absolute;
   inset: -14px -16px;
@@ -364,16 +479,22 @@ textarea:focus {
   z-index: -1;
 }
 
+/* add subtle ring when checked */
+.option-card input:checked + span{
+  text-shadow: none;
+}
+.option-card input:checked + span::before{
+  content: "";
+}
+
 /* ---------- Footer ---------- */
-.footer {
+.footer{
   border-top: 1px solid rgba(234,240,255,0.08);
   padding: 36px 0;
   color: var(--faint);
 }
 
 /* ---------- Motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
 }
