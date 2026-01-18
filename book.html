@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book a Lesson | IELTS Coaching</title>
-  <meta name="description" content="Book an IELTS trial lesson or package. Simple scheduling, clear expectations, and no back-and-forth emails." />
+  <meta name="description" content="Request a booking for an IELTS trial lesson or package. Leave your contact details and what you want to book." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -37,13 +37,15 @@
     <div class="container">
       <div class="section__head">
         <div class="kicker">
-          <span>Booking</span>
-          <span class="badge">Fast & simple</span>
+          <span>Booking request</span>
+          <span class="badge">No back-and-forth</span>
         </div>
         <h1>Book a lesson</h1>
         <p>
-          Use the calendar below to book a trial lesson or package session.
-          You’ll receive instant confirmation — no emails back and forth.
+          Leave your contact details and what you want to book. I’ll reply with available times and the next step.
+        </p>
+        <p class="faint" style="margin-top: 10px;">
+          If you’re unsure what to book, start with the <a class="text-link" href="free-diagnostic.html">free diagnostic</a>.
         </p>
       </div>
     </div>
@@ -59,14 +61,12 @@
             <h2>Before you book</h2>
             <ul class="checklist">
               <li>Lessons are 60 minutes unless stated otherwise</li>
-              <li>Coaching focuses on Writing and Speaking only</li>
-              <li>Please book only if you are Band 6–8 level</li>
-              <li>Be prepared to practise and complete homework</li>
+              <li>Focus: IELTS Writing and Speaking (Academic / General / UKVI)</li>
+              <li>Best fit: Band 6–8 candidates</li>
+              <li>You need to practise between lessons</li>
             </ul>
-
-            <p class="faint" style="margin-top: 12px;">
-              If you’re unsure whether lessons are right for you, start with the
-              <a class="text-link" href="free-diagnostic.html">free diagnostic</a>.
+            <p class="faint" style="margin-top: 12px; margin-bottom: 0;">
+              If you’re below Band 5, you’ll likely progress faster with a foundation course first.
             </p>
           </div>
         </div>
@@ -74,16 +74,12 @@
         <div class="card">
           <div class="card__inner">
             <h2>What happens next</h2>
-            <ol style="padding-left: 1.2rem; color: rgba(234,240,255,0.75);">
-              <li style="margin-bottom: 10px;">Choose a time that suits your time zone</li>
-              <li style="margin-bottom: 10px;">Complete payment (if required)</li>
-              <li style="margin-bottom: 10px;">Receive confirmation + meeting link</li>
-              <li>Prepare any writing or speaking samples</li>
+            <ol style="padding-left: 1.2rem; color: rgba(234,240,255,0.75); margin: 0;">
+              <li style="margin-bottom: 10px;">You submit the form below</li>
+              <li style="margin-bottom: 10px;">I reply with available times in your time zone</li>
+              <li style="margin-bottom: 10px;">You confirm the slot and payment (if required)</li>
+              <li>We meet online and start work immediately</li>
             </ol>
-
-            <p class="faint" style="margin-top: 12px;">
-              All lessons are online. Please join on time — late arrivals reduce lesson time.
-            </p>
           </div>
         </div>
 
@@ -91,50 +87,143 @@
     </div>
   </section>
 
-  <!-- Calendar Embed -->
+  <!-- Booking Form -->
   <section class="section">
     <div class="container">
       <div class="cta">
-        <h2>Choose your time</h2>
+        <h2>Booking request form</h2>
         <p>
-          Select an available slot below. Your local time zone should be detected automatically.
+          Fill this in properly and I can respond quickly.
         </p>
 
-        <!-- Calendly / Tidycal Embed -->
-        <div style="margin-top: 24px;">
-          <!-- Replace this iframe with your actual booking link -->
-          <iframe
-            src="https://calendly.com/YOUR-CALENDLY-USERNAME/ielts-trial-lesson"
-            width="100%"
-            height="650"
-            frameborder="0"
-            title="Book an IELTS lesson"
-            style="border-radius: 16px; border: 1px solid rgba(234,240,255,0.12);">
-          </iframe>
-        </div>
+        <form
+          action="#"
+          method="post"
+          data-guard
+          style="margin-top: 22px; display: grid; gap: 14px; max-width: 820px;"
+        >
+          <!-- Name -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">Full name <span class="faint">*</span></span>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Your name"
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+            />
+          </label>
 
-        <p class="faint" style="margin-top: 14px;">
-          If the calendar doesn’t load, try refreshing the page or contact me directly.
-        </p>
-      </div>
-    </div>
-  </section>
+          <!-- Email -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">Email <span class="faint">*</span></span>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+            />
+          </label>
 
-  <!-- Alternative CTA -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="card">
-        <div class="card__inner">
-          <h2>Not ready to book yet?</h2>
-          <p>
-            If you want to understand your current band level first,
-            the diagnostic is usually the better starting point.
-          </p>
-          <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
-            <a class="btn btn--primary" href="free-diagnostic.html">Get a free diagnostic</a>
-            <a class="btn btn--ghost" href="contact.html">Ask a question</a>
+          <!-- WhatsApp -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">WhatsApp / WeChat (optional)</span>
+            <input
+              type="text"
+              name="messenger"
+              placeholder="+44 7xxx xxx xxx / WeChat ID"
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+            />
+          </label>
+
+          <!-- What to book -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">What do you want to book? <span class="faint">*</span></span>
+            <select
+              name="booking_type"
+              required
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+            >
+              <option value="" selected disabled>Select one…</option>
+              <option value="trial">Trial lesson (60 mins)</option>
+              <option value="task2">Writing Task 2 coaching</option>
+              <option value="task1">Writing Task 1 coaching</option>
+              <option value="speaking">Speaking coaching</option>
+              <option value="full-prep">Full test preparation</option>
+              <option value="correction">Writing correction only</option>
+              <option value="other">Other / not sure</option>
+            </select>
+          </label>
+
+          <!-- Time zone -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">Your time zone <span class="faint">*</span></span>
+            <input
+              type="text"
+              name="timezone"
+              required
+              placeholder="e.g. China Standard Time (UTC+8) / UK (GMT)"
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+            />
+          </label>
+
+          <!-- Preferred times -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">Preferred days/times <span class="faint">*</span></span>
+            <input
+              type="text"
+              name="preferred_times"
+              required
+              placeholder="e.g. Mon/Wed 19:00–21:00, Sat morning"
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+            />
+          </label>
+
+          <!-- Band + goal -->
+          <div class="grid grid-2" style="gap: 14px;">
+            <label style="display: grid; gap: 8px;">
+              <span class="muted">Current band (estimate)</span>
+              <input
+                type="text"
+                name="current_band"
+                placeholder="e.g. Writing 6.0 / Speaking 6.5"
+                style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+              />
+            </label>
+
+            <label style="display: grid; gap: 8px;">
+              <span class="muted">Target band</span>
+              <input
+                type="text"
+                name="target_band"
+                placeholder="e.g. 7.0 overall / 7.0 writing"
+                style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
+              />
+            </label>
           </div>
-        </div>
+
+          <!-- Message -->
+          <label style="display: grid; gap: 8px;">
+            <span class="muted">Message (optional)</span>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Any deadlines, problem areas, or questions…"
+              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92); resize: vertical;"
+            ></textarea>
+          </label>
+
+          <!-- Submit -->
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px;">
+            <button class="btn btn--primary" type="submit">Send booking request</button>
+            <a class="btn btn--ghost" href="pricing.html">View pricing</a>
+          </div>
+
+          <p class="faint" style="margin: 6px 0 0;">
+            Note: this form does not take payment yet. It sends a request. I’ll reply with available times and next steps.
+          </p>
+        </form>
       </div>
     </div>
   </section>
