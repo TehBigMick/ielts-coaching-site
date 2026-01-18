@@ -92,9 +92,7 @@
     <div class="container">
       <div class="cta">
         <h2>Booking request form</h2>
-        <p>
-          Fill this in properly and I can respond quickly.
-        </p>
+        <p>Fill this in properly and I can respond quickly.</p>
 
         <form
           action="#"
@@ -110,7 +108,6 @@
               name="name"
               required
               placeholder="Your name"
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
             />
           </label>
 
@@ -122,7 +119,6 @@
               name="email"
               required
               placeholder="you@example.com"
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
             />
           </label>
 
@@ -133,28 +129,50 @@
               type="text"
               name="messenger"
               placeholder="+44 7xxx xxx xxx / WeChat ID"
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
             />
           </label>
 
-          <!-- What to book -->
-          <label style="display: grid; gap: 8px;">
-            <span class="muted">What do you want to book? <span class="faint">*</span></span>
-            <select
-              name="booking_type"
-              required
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
-            >
-              <option value="" selected disabled>Select one…</option>
-              <option value="trial">Trial lesson (60 mins)</option>
-              <option value="task2">Writing Task 2 coaching</option>
-              <option value="task1">Writing Task 1 coaching</option>
-              <option value="speaking">Speaking coaching</option>
-              <option value="full-prep">Full test preparation</option>
-              <option value="correction">Writing correction only</option>
-              <option value="other">Other / not sure</option>
-            </select>
-          </label>
+          <!-- What to book (multi-select radial menu style) -->
+          <fieldset class="booking-options">
+            <legend class="muted">What do you want to book? <span class="faint">*</span></legend>
+
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="trial">
+                <span>Trial lesson (60 mins)</span>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="task2">
+                <span>Writing Task 2 coaching</span>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="task1">
+                <span>Writing Task 1 coaching</span>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="speaking">
+                <span>Speaking coaching</span>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="full-prep">
+                <span>Full IELTS preparation</span>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="correction">
+                <span>Writing correction only</span>
+              </label>
+
+              <label class="option-card">
+                <input type="checkbox" name="booking_type[]" value="unsure">
+                <span>Not sure yet</span>
+              </label>
+            </div>
+          </fieldset>
 
           <!-- Time zone -->
           <label style="display: grid; gap: 8px;">
@@ -164,7 +182,6 @@
               name="timezone"
               required
               placeholder="e.g. China Standard Time (UTC+8) / UK (GMT)"
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
             />
           </label>
 
@@ -176,7 +193,6 @@
               name="preferred_times"
               required
               placeholder="e.g. Mon/Wed 19:00–21:00, Sat morning"
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
             />
           </label>
 
@@ -188,7 +204,6 @@
                 type="text"
                 name="current_band"
                 placeholder="e.g. Writing 6.0 / Speaking 6.5"
-                style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
               />
             </label>
 
@@ -198,7 +213,6 @@
                 type="text"
                 name="target_band"
                 placeholder="e.g. 7.0 overall / 7.0 writing"
-                style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92);"
               />
             </label>
           </div>
@@ -210,7 +224,7 @@
               name="message"
               rows="5"
               placeholder="Any deadlines, problem areas, or questions…"
-              style="padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(234,240,255,0.14); background: rgba(255,255,255,0.03); color: rgba(234,240,255,0.92); resize: vertical;"
+              style="resize: vertical;"
             ></textarea>
           </label>
 
